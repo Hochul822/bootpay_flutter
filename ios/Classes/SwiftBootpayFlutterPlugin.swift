@@ -27,11 +27,11 @@ public class SwiftBootpayFlutterPlugin: NSObject, FlutterPlugin {
         }
     }
 
-    func applicationWillResignActive(_ application: UIApplication) {
+    public func applicationWillResignActive(_ application: UIApplication) {
         BootpayAnalytics.sharedInstance.sessionActive(active: false)
     }
 
-    func applicationDidBecomeActive(_ application: UIApplication) {
+    public func applicationDidBecomeActive(_ application: UIApplication) {
         BootpayAnalytics.sharedInstance.sessionActive(active: true)
     }
 }
