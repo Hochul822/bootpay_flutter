@@ -19,6 +19,6 @@ Bootpay payment moudle for flutter
 
   s.static_framework = true
 
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '13.0'
 end
 
