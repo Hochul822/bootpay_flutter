@@ -87,7 +87,7 @@ public class BootpayActivity extends BootpayFlutterActivity {
                     .onReady(this)
                     .onCancel(this)
                     .onError(this)
-                    .onClose(this)
+                    .onClose(message -> closeBootpay(message))
                     .request();
         } catch (Exception e) {
             Log.d("bootpay  error", e.getMessage());
@@ -123,6 +123,11 @@ public class BootpayActivity extends BootpayFlutterActivity {
         this.finish();
     }
 
+    public void closeBootPay(String message) {
+        Log.d("bootpay", "close " + message);
+        this.finish();
+    }
+
     @Override
     public void onReady(String message) {
         Log.d("bootpay  ready", message);
@@ -133,6 +138,8 @@ public class BootpayActivity extends BootpayFlutterActivity {
         Log.d("bootpay  confirm", message);
         Bootpay.confirm(message);
     }
+
+    
 
     @Override
     public void onDone(String message) {
