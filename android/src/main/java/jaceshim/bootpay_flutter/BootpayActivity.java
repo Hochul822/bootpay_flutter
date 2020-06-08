@@ -170,6 +170,11 @@ public class BootpayActivity extends BootpayFlutterActivity {
         this.finish();
     }
 
+    public void closeBootPay(String message) {
+        Log.d("bootpay", "close " + message);
+        this.finish();
+    }
+
     @Override
     public void onReady(String message) {
         Log.i("bootpay", "on ready " + message);
@@ -180,6 +185,8 @@ public class BootpayActivity extends BootpayFlutterActivity {
         Log.i("bootpay", "on confirm " + message);
         Bootpay.confirm(message);
     }
+
+    
 
     @Override
     public void onDone(String message) {
